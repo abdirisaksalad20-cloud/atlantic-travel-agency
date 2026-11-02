@@ -42,6 +42,25 @@ document.addEventListener("DOMContentLoaded", function () {
     // Travel inquiry form
     const travelForm = document.getElementById("travelForm");
 
+    document.querySelectorAll(".destination-button").forEach(function (button) {
+
+        button.addEventListener("click", function () {
+            document.getElementById("destination").value =
+                button.dataset.destination;
+            document.getElementById("serviceType").value = "Flight Ticket";
+        });
+    });
+
+    document.querySelectorAll(".pilgrimage-button").forEach(function (button) {
+
+        button.addEventListener("click", function () {
+            document.getElementById("serviceType").value =
+                button.dataset.pilgrimage;
+            document.getElementById("destination").value =
+                "Makkah, Saudi Arabia";
+        });
+    });
+
     travelForm.addEventListener("submit", function (event) {
 
         event.preventDefault();
